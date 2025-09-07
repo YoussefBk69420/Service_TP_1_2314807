@@ -10,26 +10,23 @@
 
      <!-- Requête #1 : Obtenir les artistes similaires -->
     <div>
-      Artiste : <input type="text" name="artistName" placeholder="Nana Mouskouri"> 
-      &nbsp;<button>Chercher les artistes similaires</button>
+      Artiste : <input type="text" class="form-control" [(ngModel)]="artistInput"> 
+      &nbsp;<button class="btn btn-primary" (click)="getAlbumSearch()">Chercher les artistes similaires</button>
       <hr>
 
-      <!--
+      
       <div>
-        Résultats :
+        Résultats des albums de {{artistName}} :
         <ul>
-          <li>NOM_ARTISTE</li>
+          <li *ngFor="let album of albums">{{album.name}}</li>
         </ul>
       </div>
-      -->
+     
       
     </div>
 
     <!-- Requête #2 : Obtenir les meilleures chansons d'un genre -->
-    <div>
-      Genre : <input type="text" name="genre" placeholder="pop"> 
-      &nbsp;<button>Chercher les meilleures chansons</button>
-      <hr>
+    
 
       <!--
       <div>
@@ -40,7 +37,7 @@
       </div>
       -->
       
-    </div>
+    
 
   </div>
  
